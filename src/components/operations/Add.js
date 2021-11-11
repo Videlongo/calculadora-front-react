@@ -5,7 +5,7 @@ export default function Add() {
 	return (
 		<div>
 			<h1>Suma</h1>
-			<Form route="suma" />
+			<Form route="sumar" />
 		</div>
 	);
 }

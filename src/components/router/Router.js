@@ -1,5 +1,7 @@
 import Add from "../operations/Add";
 import Sub from "../operations/Sub";
+import Div from "../operations/Div";
+import Mul from "../operations/Mul";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
@@ -7,6 +9,8 @@ export default function App() {
 		<Switch>
 			<Route path="/suma" component={Add} />
 			<Route path="/resta" component={Sub} />
+			<Route path="/division" component={Div} />
+			<Route path="/multiplicacion" component={Mul} />
 		</Switch>
 	);
 }

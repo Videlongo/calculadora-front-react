@@ -17,7 +17,7 @@ const NavbarComponent = (props) => {
 
 	return (
 		<div>
-			<Navbar color="dark" light expand="md">
+			<Navbar color="white" light expand="md">
 				<NavbarBrand>Calc</NavbarBrand>
 				<NavbarToggler onClick={toggle} />
 				<Collapse isOpen={isOpen} navbar>
@@ -30,6 +30,16 @@ const NavbarComponent = (props) => {
 						<NavItem>
 							<Link className="nav-link" to="/resta">
 								RESTA
+							</Link>
+						</NavItem>
+						<NavItem>
+							<Link className="nav-link" to="/division">
+								DIVISIÓN
+							</Link>
+						</NavItem>
+						<NavItem>
+							<Link className="nav-link" to="/multiplicacion">
+								MULTIPLICACIÓN
 							</Link>
 						</NavItem>
 					</Nav>
