@@ -1,0 +1,26 @@
+pool:
+  name: "Azure Pipelines"
+  VmImage: Ubuntu-18.04
+
+resources:
+  repositories:
+    - repository: templates
+      name: training-quind/training-esteban-template
+      type: git
+
+parameters:
+  - name: language
+    type: string
+    displayName: language
+    default: java
+    values:
+    - java
+    - react
+
+variables:
+  - template: variables/vars-azure-pipeline.yml
+
+extends:
+  template: main.yml@templates
+  parameters:
+    language: ${{ parameters.language }}

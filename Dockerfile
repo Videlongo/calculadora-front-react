@@ -1,8 +1,7 @@
-FROM node:latest AS miapp
+FROM node:16 AS miapp
 WORKDIR /app
-# COPY package.json ./
-# RUN npm install
-COPY . .
+COPY ./ ./
+RUN npm install
 RUN npm run build 
 
 FROM nginx

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-calculadora
+  namespace: namespace-esteban
+spec:
+  selector:
+      matchLabels:
+        app: frontend-training
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend-training
+    spec:
+      containers:
+      - name: frontend-training
+        image: acresteban.azurecr.io/front-calculadora
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+      imagePullSecrets:
+        - name: acr-training 
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend-calculadora
+  namespace: namespace-esteban
+spec:
+  selector:
+    app: frontend-training
+  ports:
+  - protocol: TCP
+    port: 80
+  type: LoadBalancer

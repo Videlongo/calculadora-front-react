@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import axios from "axios";
+
+const reqDic = "/calculadora";
+export { reqDic };
+
 export default function FormComponent({route}) {
 	const [data, setData] = useState({
 		number1: "",
@@ -18,7 +22,7 @@ export default function FormComponent({route}) {
 		console.log(data, "---> enviando data");
 		axios
 			.get(
-				`http://localhost:9090/calculadora/${route}?num1=${data.number1}&num2=${data.number2}`
+				`${reqDic}/${route}?num1=${data.number1}&num2=${data.number2}`
 			)
 			.then((response) => {
 				console.log(response);
