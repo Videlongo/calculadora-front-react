@@ -12,7 +12,7 @@ parameters:
   - name: language
     type: string
     displayName: language
-    default: java
+    default: react
     values:
     - java
     - react
