@@ -8,19 +8,10 @@ resources:
       name: training-quind/training-esteban-template
       type: git
 
-parameters:
-  - name: language
-    type: string
-    displayName: language
-    default: react
-    values:
-    - java
-    - react
-
 variables:
   - template: variables/vars-azure-pipeline.yml
 
 extends:
   template: main.yml@templates
   parameters:
-    language: ${{ parameters.language }}
+    language: react
