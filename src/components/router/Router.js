@@ -2,7 +2,7 @@ import Add from "../operations/Add";
 import Sub from "../operations/Sub";
 import Div from "../operations/Div";
 import Mul from "../operations/Mul";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 export default function App() {
 	return (
